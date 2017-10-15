@@ -20,12 +20,6 @@ export function createCustomHistory() {
 					return;
 				}
 				$("body").animate({ scrollTop: 0 }, 500);
-
-				// var timerID = setInterval(function () {
-				//     window.scrollBy(0, -30);
-				//     if (window.pageYOffset === 0)
-				//         clearInterval(timerID);
-				// }, 13);
 			}, 10);
 		});
 	}
