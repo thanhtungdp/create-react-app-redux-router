@@ -33,11 +33,14 @@
     "font-awesome": "^4.7.0",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
+    "husky": "^0.14.3",
     "jest": "20.0.4",
     "jquery": "^3.2.1",
+    "lint-staged": "^4.2.3",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
+    "prettier": "^1.7.4",
     "promise": "8.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
@@ -68,8 +71,14 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "lint": "standard --verbose",
-    "fixcode": "standard --fix"
+    "precommit": "lint-staged",
+    "fixcode": "prettier --no-semi --single-quote --write"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+       "npm run fixcode",
+       "git add"
+     ]
   },
   "jest": {
     "collectCoverageFrom": [
