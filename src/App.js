@@ -9,7 +9,9 @@ import configureStore from './redux/createStore'
 var browserHistory = createCustomHistory()
 
 const getStoreDefault = () => {
-  if (typeof window !== 'undefined') { return window.__REDUX_STORE__ ? window.__REDUX_STORE__ : {} }
+  if (typeof window !== 'undefined') {
+    return window.__REDUX_STORE__ ? window.__REDUX_STORE__ : {}
+  }
   return {}
 }
 
@@ -18,12 +20,10 @@ const store = configureStore(getStoreDefault(), {
 })
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <Provider store={store}>
-        <Router history={browserHistory}>
-          {AppRoute()}
-        </Router>
+        <Router history={browserHistory}>{AppRoute()}</Router>
       </Provider>
     )
   }

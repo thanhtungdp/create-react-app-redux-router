@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router'
 import HomeContainer from './containers/home'
 
 export default () => (
-  <Route path='/'>
+  <Route path="/">
     <IndexRoute component={HomeContainer} />
   </Route>
 )

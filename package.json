@@ -72,7 +72,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "precommit": "lint-staged",
-    "fixcode": "prettier --no-semi --single-quote --write"
+    "fixcode": "prettier --no-semi --single-quote --write src/*.js src/*/*.js"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
